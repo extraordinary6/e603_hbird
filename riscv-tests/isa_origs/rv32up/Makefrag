@@ -1,0 +1,25 @@
+#=======================================================================
+# Makefrag for v5_dsp_addsub tests
+#-----------------------------------------------------------------------
+
+rv32up_sc_tests = \
+               dsp_addsub \
+               dsp_mul_base_test \
+               dsp_longp_base_test \
+               dsp_unpack \
+               dsp_pack \
+               dsp_clip \
+               dsp_cl \
+               dsp_insb \
+               dsp_bpick \
+               dsp_bitrev \
+               dsp_swap \
+               dsp_shift8 \
+               dsp_shift16 \
+               dsp_shift32 \
+               dsp_wext \
+        
+        
+rv32up_p_tests = $(addprefix rv32up-p-, $(rv32up_sc_tests))
+
+spike_tests += $(rv32up_p_tests)
